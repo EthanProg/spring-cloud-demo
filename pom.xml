@@ -11,6 +11,7 @@
 	<name>spring-cloud-demo</name>
 	<description>Demo project for Spring Boot</description>
 
+	<!-- spring boot 版本的基础依赖 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -25,15 +26,27 @@
 	</properties>
 
 	<dependencies>
+		<!-- 全栈web开发模块 包含嵌入式tomcat, Spring mvc -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- 通用测试模块 包含JUnit Hamcrest Mockito -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<!--
+			应用监控系统端点 采集应用监控指标度量 http://127.0.0.1:8080/health
+			原生端点主要分为如下三类：
+			1.应用配置类：获取应用程序中加载的应用配置、环境变量、自动化配置报告等与Spring Boot应用密切相关的配置信息。
+			2.度量类指标：获取应用程序运行过程中用于监控的度量指标，比如内存信息、线程池信息、HTTP请求统计等。
+			3.操作控制类：提供了对应用的关闭等操作类功能
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
 
