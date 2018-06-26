@@ -16,15 +16,15 @@ public class TestController {
 
     private final Logger logger = Logger.getLogger(getClass());
 
-    @Autowired
-    private DiscoveryClient client;
-
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String index(){
-        ServiceInstance instance = client.getLocalServiceInstance();
-        System.out.println("/hell0, host: " + instance.getHost() + ", service_id: " + instance.getServiceId());
-        return "Hello Wolrd";
-    }
+//    @Autowired
+//    private DiscoveryClient client;
+//
+//    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+//    public String index(){
+//        ServiceInstance instance = client.getLocalServiceInstance();
+//        System.out.println("/hell0, host: " + instance.getHost() + ", service_id: " + instance.getServiceId());
+//        return "Hello Wolrd";
+//    }
 
     @RequestMapping("/test")
     public String test(){

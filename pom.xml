@@ -63,6 +63,19 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 
+
+		<!--
+			Ribbon是一个基于HTTP和TCP的客户端负载均衡器
+			它可以在通过客户端配置的ribbonServletList服务端列表去轮询访问以达到负载均衡的目的
+			当Ribbon与Eureka联合使用时，Ribbon的服务实例清单RibbonServletList会被DiscoveryEnabledNIWSServerList
+			重写，扩展成从Eureka注册中心获取服务端列表。
+			同时会用NIWSDiscoveryPing来取代IPing，它将职责委托给Eureka来确定服务端是否已经启动。
+		-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
